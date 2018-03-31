@@ -1,0 +1,25 @@
+{
+    "name": "alerts",
+    "version": "0.0.0",
+    "description": "Connect to the Via alerts server to create, update, and handle alerts.",
+    "main": "./lib/main",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "via",
+        "alerts"
+    ],
+    "repository": "https://github.com/via-platform/alerts",
+    "author": "Dakota Gordon",
+    "engines": {
+        "via": "^0.5.7-alpha"
+    },
+    "dependencies": {
+        "moment": "^2.20.1"
+    },
+    "providedServices": {},
+    "configSchema": {
+        
+    }
+}
