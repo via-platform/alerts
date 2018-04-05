@@ -16,10 +16,50 @@
         "via": "^0.5.7-alpha"
     },
     "dependencies": {
-        "moment": "^2.20.1"
+        "axios": "^0.17.0",
+        "moment": "^2.20.1",
+        "etch": "0.9.0",
+        "underscore-plus": "^1.0.0",
+        "via-table": "^0.2.0"
     },
     "providedServices": {},
     "configSchema": {
-        
+        "confirmCancelAlert": {
+            "title": "Confirm Before Canceling Alerts",
+            "description": "Show a confirmation windows before canceling an active alert.",
+            "type": "boolean",
+            "default": false
+        },
+        "notifyCreatedAlert": {
+            "title": "Notify On Created Alert",
+            "description": "Show a notification when an alert is successfully created.",
+            "type": "boolean",
+            "default": false
+        },
+        "notifyUpdatedAlert": {
+            "title": "Notify On Updated Alert",
+            "description": "Show a notification when an alert is successfully updated.",
+            "type": "boolean",
+            "default": false
+        },
+        "notifyExpiredAlert": {
+            "title": "Notify On Expired Alert",
+            "description": "Show a notification when an alert expires before it is triggered.",
+            "type": "boolean",
+            "default": true
+        },
+        "notifyCanceledAlert": {
+            "title": "Notify On Canceled Alert",
+            "description": "Show a notification when an alert is canceled.",
+            "type": "boolean",
+            "default": false
+        }
+    },
+    "consumedServices": {
+        "action-bar": {
+            "versions": {
+                "^0.1.0": "consumeActionBar"
+            }
+        }
     }
 }

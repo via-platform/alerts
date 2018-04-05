@@ -3,5 +3,126 @@
 
 .alerts
 {
+    background: @pane-background-color;
+    display: flex;
+    flex-direction: column;
 
+    .thead
+    {
+        display: flex;
+        border-bottom: 1px solid @header-border-color;
+        background: @header-background-color;
+
+        .td
+        {
+            line-height: 24px;
+            flex: 1;
+            font-size: 11px;
+            color: @text-color-subtle;
+            padding: 0 10px;
+
+            &:last-child
+            {
+                border-right: 0;
+            }
+        }
+    }
+
+    .alerts-list
+    {
+        flex: 1;
+        overflow: auto;
+    }
+
+    .via-table
+    {
+        .tr
+        {
+            display: flex;
+            height: 25px;
+            border-bottom: 1px solid fade(@header-border-color, 50%);
+
+            .td
+            {
+                flex: 1;
+                font-size: 11px;
+                padding: 0 10px;
+                line-height: 24px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+}
+
+.alert-creator
+{
+    .alert-options
+    {
+        padding: 10px;
+    }
+
+    .alert-type
+    {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .alert-label
+    {
+        font-size: 11px;
+        color: @text-color-subtle;
+        margin-bottom: 6px;
+        padding: 0 2px;
+
+        .error
+        {
+            color: @text-color-error;
+            text-align: right;
+        }
+
+        .warning
+        {
+            color: @text-color-warning;
+            text-align: right;
+        }
+    }
+
+    .input-unit
+    {
+        margin-bottom: 15px;
+
+        &:last-child
+        {
+            margin-bottom: 5px;
+        }
+    }
+
+    .alert-transmit
+    {
+        width: 100%;
+        font-weight: 700;
+        text-transform: uppercase;
+        height: 34px;
+        border-radius: 3px;
+        border: 0;
+        font-size: 12px;
+        font-family: @font-family;
+        background-color: @primary-color;
+        color: @text-color;
+
+        &.invalid
+        {
+            pointer-events: none;
+            background: @header-border-color;
+            color: @pane-background-color;
+        }
+
+        &.transmitting
+        {
+            opacity: 0.3;
+            pointer-events: none;
+        }
+    }
 }

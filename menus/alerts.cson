@@ -1,0 +1,7 @@
+'context-menu':
+  '.alerts .tr.open': [
+    {label: 'Cancel Alert', command: 'alerts:cancel-alert'}
+  ]
+  '.alerts .tr.pending': [
+    {label: 'Remove Alert', command: 'alerts:cancel-alert'}
+  ]
