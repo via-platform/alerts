@@ -1,0 +1,119 @@
+@import "variables";
+@import "ui-variables";
+
+.chart
+{
+    .chart-axis
+    {
+        .chart-alert-flag
+        {
+            rect
+            {
+                fill: #FFF;
+            }
+
+            text
+            {
+                fill: #333;
+                font-size: 12px;
+                font-weight: 700;
+                font-family: 'Inconsolata';
+            }
+        }
+    }
+
+    .panel .chart-alert-tools
+    {
+        position: absolute;
+        top: 0;
+        right: 180px;
+        height: 21px;
+        background: @pane-background-color;
+        padding: 1px;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        font-weight: 700;
+        font-family: 'Inconsolata';
+        line-height: 19px;
+        user-select: none;
+        cursor: row-resize;
+
+        .base
+        {
+            background: @text-color;
+            color: @primary-color;
+            padding: 0 6px;
+        }
+
+        .estimate
+        {
+            min-width: 20px;
+            min-height: 19px;
+            background: @primary-color;
+            color: @text-color;
+            padding: 0 6px;
+            margin-left: 1px;
+        }
+
+        .cancel
+        {
+            margin-left: 1px;
+            height: 19px;
+            width: 19px;
+            background: url('via://charts/images/close.svg') 5px 5px no-repeat @primary-color;
+            background-size: 9px auto;
+            cursor: default;
+
+            &:hover
+            {
+                background-color: darken(@primary-color, 25%);
+            }
+        }
+
+        &.hide
+        {
+            display: none;
+        }
+
+        &.open
+        {
+            right: 59px;
+
+            .estimate
+            {
+                background: url('via://alerts/images/alert.svg') 5px 4px no-repeat @primary-color;
+                background-size: 11px auto;
+            }
+
+            .base, .cancel
+            {
+                pointer-events: none;
+                display: none;
+                color: @text-color;
+                background: @primary-color;
+            }
+
+            &:hover, &:active
+            {
+                .base
+                {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .panel .layer.chart-alert-line
+    {
+        path
+        {
+            stroke: #FFF;
+            fill: transparent;
+            stroke-width: 1px;
+            stroke-dasharray: 2;
+            pointer-events: none;
+        }
+    }
+}

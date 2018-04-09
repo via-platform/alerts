@@ -5,3 +5,9 @@
   '.alerts .tr.pending': [
     {label: 'Remove Alert', command: 'alerts:cancel-alert'}
   ]
+  '.chart .chart-alert-tools.open': [
+    {label: 'Cancel Alert', command: 'alerts:cancel-alert'}
+  ]
+  '.chart .chart-alert-tools.pending': [
+    {label: 'Remove Alert', command: 'alerts:cancel-alert'}
+  ]

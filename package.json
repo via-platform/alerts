@@ -60,6 +60,11 @@
             "versions": {
                 "^0.1.0": "consumeActionBar"
             }
+        },
+        "charts": {
+            "versions": {
+                "^0.1.0": "consumeCharts"
+            }
         }
     }
 }
