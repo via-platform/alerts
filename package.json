@@ -1,70 +1,70 @@
 {
-    "name": "alerts",
-    "version": "0.0.0",
-    "description": "Connect to the Via alerts server to create, update, and handle alerts.",
-    "main": "./lib/main",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+  "name": "alerts",
+  "version": "0.1.0",
+  "description": "Connect to the Via alerts server to create, update, and handle alerts.",
+  "main": "./lib/main",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "via",
+    "alerts"
+  ],
+  "repository": "https://github.com/via-platform/alerts",
+  "author": "Dakota Gordon",
+  "engines": {
+    "via": "^0.5.7-alpha"
+  },
+  "dependencies": {
+    "axios": "^0.17.0",
+    "moment": "^2.20.1",
+    "etch": "0.9.0",
+    "underscore-plus": "^1.0.0",
+    "via-table": "^0.2.0"
+  },
+  "providedServices": {},
+  "configSchema": {
+    "confirmCancelAlert": {
+      "title": "Confirm Before Canceling Alerts",
+      "description": "Show a confirmation windows before canceling an active alert.",
+      "type": "boolean",
+      "default": false
     },
-    "keywords": [
-        "via",
-        "alerts"
-    ],
-    "repository": "https://github.com/via-platform/alerts",
-    "author": "Dakota Gordon",
-    "engines": {
-        "via": "^0.5.7-alpha"
+    "notifyCreatedAlert": {
+      "title": "Notify On Created Alert",
+      "description": "Show a notification when an alert is successfully created.",
+      "type": "boolean",
+      "default": false
     },
-    "dependencies": {
-        "axios": "^0.17.0",
-        "moment": "^2.20.1",
-        "etch": "0.9.0",
-        "underscore-plus": "^1.0.0",
-        "via-table": "^0.2.0"
+    "notifyUpdatedAlert": {
+      "title": "Notify On Updated Alert",
+      "description": "Show a notification when an alert is successfully updated.",
+      "type": "boolean",
+      "default": false
     },
-    "providedServices": {},
-    "configSchema": {
-        "confirmCancelAlert": {
-            "title": "Confirm Before Canceling Alerts",
-            "description": "Show a confirmation windows before canceling an active alert.",
-            "type": "boolean",
-            "default": false
-        },
-        "notifyCreatedAlert": {
-            "title": "Notify On Created Alert",
-            "description": "Show a notification when an alert is successfully created.",
-            "type": "boolean",
-            "default": false
-        },
-        "notifyUpdatedAlert": {
-            "title": "Notify On Updated Alert",
-            "description": "Show a notification when an alert is successfully updated.",
-            "type": "boolean",
-            "default": false
-        },
-        "notifyExpiredAlert": {
-            "title": "Notify On Expired Alert",
-            "description": "Show a notification when an alert expires before it is triggered.",
-            "type": "boolean",
-            "default": true
-        },
-        "notifyCanceledAlert": {
-            "title": "Notify On Canceled Alert",
-            "description": "Show a notification when an alert is canceled.",
-            "type": "boolean",
-            "default": false
-        }
+    "notifyExpiredAlert": {
+      "title": "Notify On Expired Alert",
+      "description": "Show a notification when an alert expires before it is triggered.",
+      "type": "boolean",
+      "default": true
     },
-    "consumedServices": {
-        "action-bar": {
-            "versions": {
-                "^0.1.0": "consumeActionBar"
-            }
-        },
-        "charts": {
-            "versions": {
-                "^0.1.0": "consumeCharts"
-            }
-        }
+    "notifyCanceledAlert": {
+      "title": "Notify On Canceled Alert",
+      "description": "Show a notification when an alert is canceled.",
+      "type": "boolean",
+      "default": false
     }
+  },
+  "consumedServices": {
+    "action-bar": {
+      "versions": {
+        "^0.1.0": "consumeActionBar"
+      }
+    },
+    "charts": {
+      "versions": {
+        "^0.1.0": "consumeCharts"
+      }
+    }
+  }
 }
