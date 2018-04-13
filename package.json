@@ -1,144 +1,144 @@
 {
-    "name": "alerts",
-    "version": "0.1.2",
-    "description": "Connect to the Via alerts server to create, update, and handle alerts.",
-    "main": "./lib/main",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+  "name": "alerts",
+  "version": "0.2.0",
+  "description": "Connect to the Via alerts server to create, update, and handle alerts.",
+  "main": "./lib/main",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "via",
+    "alerts"
+  ],
+  "repository": "https://github.com/via-platform/alerts",
+  "author": "Dakota Gordon",
+  "engines": {
+    "via": "^0.5.7-alpha"
+  },
+  "dependencies": {
+    "axios": "^0.17.0",
+    "moment": "^2.20.1",
+    "etch": "0.9.0",
+    "underscore-plus": "^1.0.0",
+    "via-table": "^0.2.1"
+  },
+  "providedServices": {},
+  "configSchema": {
+    "hideCanceledAlerts": {
+      "title": "Hide Canceled Alerts",
+      "description": "Hide alerts in the alert manager after they have been canceled or triggered.",
+      "type": "boolean",
+      "default": true
     },
-    "keywords": [
-        "via",
-        "alerts"
-    ],
-    "repository": "https://github.com/via-platform/alerts",
-    "author": "Dakota Gordon",
-    "engines": {
-        "via": "^0.5.7-alpha"
+    "confirmCancelAlert": {
+      "title": "Confirm Before Canceling Alerts",
+      "description": "Show a confirmation windows before canceling an active alert.",
+      "type": "boolean",
+      "default": false
     },
-    "dependencies": {
-        "axios": "^0.17.0",
-        "moment": "^2.20.1",
-        "etch": "0.9.0",
-        "underscore-plus": "^1.0.0",
-        "via-table": "^0.2.1"
+    "notifyCreatedAlert": {
+      "title": "Notify On Created Alert",
+      "description": "Show a notification when an alert is successfully created.",
+      "type": "boolean",
+      "default": false
     },
-    "providedServices": {},
-    "configSchema": {
-        "hideCanceledAlerts": {
-            "title": "Hide Canceled Alerts",
-            "description": "Hide alerts in the alert manager after they have been canceled or triggered.",
-            "type": "boolean",
-            "default": true
+    "notifyUpdatedAlert": {
+      "title": "Notify On Updated Alert",
+      "description": "Show a notification when an alert is successfully updated.",
+      "type": "boolean",
+      "default": false
+    },
+    "notifyExpiredAlert": {
+      "title": "Notify On Expired Alert",
+      "description": "Show a notification when an alert expires before it is triggered.",
+      "type": "boolean",
+      "default": true
+    },
+    "notifyCanceledAlert": {
+      "title": "Notify On Canceled Alert",
+      "description": "Show a notification when an alert is canceled.",
+      "type": "boolean",
+      "default": false
+    },
+    "defaultExpiration": {
+      "title": "Default Alert Expiration",
+      "description": "The default amount of time to wait until automatically expiring an alert.",
+      "type": "string",
+      "default": "gtc",
+      "enum": [
+        {
+          "value": "gtc",
+          "description": "Good Til Canceled"
         },
-        "confirmCancelAlert": {
-            "title": "Confirm Before Canceling Alerts",
-            "description": "Show a confirmation windows before canceling an active alert.",
-            "type": "boolean",
-            "default": false
+        {
+          "value": "1-minute",
+          "description": "1 Minute"
         },
-        "notifyCreatedAlert": {
-            "title": "Notify On Created Alert",
-            "description": "Show a notification when an alert is successfully created.",
-            "type": "boolean",
-            "default": false
+        {
+          "value": "5-minutes",
+          "description": "5 Minutes"
         },
-        "notifyUpdatedAlert": {
-            "title": "Notify On Updated Alert",
-            "description": "Show a notification when an alert is successfully updated.",
-            "type": "boolean",
-            "default": false
+        {
+          "value": "15-minutes",
+          "description": "15 Minutes"
         },
-        "notifyExpiredAlert": {
-            "title": "Notify On Expired Alert",
-            "description": "Show a notification when an alert expires before it is triggered.",
-            "type": "boolean",
-            "default": true
+        {
+          "value": "1-hour",
+          "description": "1 Hour"
         },
-        "notifyCanceledAlert": {
-            "title": "Notify On Canceled Alert",
-            "description": "Show a notification when an alert is canceled.",
-            "type": "boolean",
-            "default": false
+        {
+          "value": "6-hours",
+          "description": "6 Hours"
         },
-        "defaultExpiration": {
-            "title": "Default Alert Expiration",
-            "description": "The default amount of time to wait until automatically expiring an alert.",
-            "type": "string",
-            "default": "gtc",
-            "enum": [
-                {
-                    "value": "gtc",
-                    "description": "Good Til Canceled"
-                },
-                {
-                    "value": "1-minute",
-                    "description": "1 Minute"
-                },
-                {
-                    "value": "5-minutes",
-                    "description": "5 Minutes"
-                },
-                {
-                    "value": "15-minutes",
-                    "description": "15 Minutes"
-                },
-                {
-                    "value": "1-hour",
-                    "description": "1 Hour"
-                },
-                {
-                    "value": "6-hours",
-                    "description": "6 Hours"
-                },
-                {
-                    "value": "24-hours",
-                    "description": "24 Hours"
-                },
-                {
-                    "value": "7-days",
-                    "description": "7 Days"
-                },
-                {
-                    "value": "30-days",
-                    "description": "30 Days"
-                }
-            ]
+        {
+          "value": "24-hours",
+          "description": "24 Hours"
         },
-        "defaultCooldown": {
-            "title": "Default Alert Cooldown",
-            "description": "The default amount of time (in seconds) to wait before an active alert can be triggered again.",
-            "type": "number",
-            "default": 60
+        {
+          "value": "7-days",
+          "description": "7 Days"
         },
-        "defaultCancelAfterTrigger": {
-            "title": "Default Cancel After Trigger",
-            "description": "Default setting to cancel an alert after it triggers, so it will only trigger once.",
-            "type": "boolean",
-            "default": true
-        },
-        "defaultSendSMS": {
-            "title": "Default Send SMS",
-            "description": "Default setting to send an SMS when an alert is triggered (if phone number is verified).",
-            "type": "boolean",
-            "default": true
-        },
-        "defaultSendEmail": {
-            "title": "Default Send Email",
-            "description": "Default setting to send an Email when an alert is triggered (if email address is verified).",
-            "type": "boolean",
-            "default": true
+        {
+          "value": "30-days",
+          "description": "30 Days"
         }
+      ]
     },
-    "consumedServices": {
-        "action-bar": {
-            "versions": {
-                "^0.1.0": "consumeActionBar"
-            }
-        },
-        "charts": {
-            "versions": {
-                "^0.1.0": "consumeCharts"
-            }
-        }
+    "defaultCooldown": {
+      "title": "Default Alert Cooldown",
+      "description": "The default amount of time (in seconds) to wait before an active alert can be triggered again.",
+      "type": "number",
+      "default": 60
+    },
+    "defaultCancelAfterTrigger": {
+      "title": "Default Cancel After Trigger",
+      "description": "Default setting to cancel an alert after it triggers, so it will only trigger once.",
+      "type": "boolean",
+      "default": true
+    },
+    "defaultSendSMS": {
+      "title": "Default Send SMS",
+      "description": "Default setting to send an SMS when an alert is triggered (if phone number is verified).",
+      "type": "boolean",
+      "default": true
+    },
+    "defaultSendEmail": {
+      "title": "Default Send Email",
+      "description": "Default setting to send an Email when an alert is triggered (if email address is verified).",
+      "type": "boolean",
+      "default": true
     }
+  },
+  "consumedServices": {
+    "action-bar": {
+      "versions": {
+        "^0.1.0": "consumeActionBar"
+      }
+    },
+    "charts": {
+      "versions": {
+        "^0.1.0": "consumeCharts"
+      }
+    }
+  }
 }
