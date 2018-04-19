@@ -55,6 +55,8 @@
             color: @text-color;
             padding: 0 6px;
             margin-left: 1px;
+            position: relative;
+            cursor: default;
         }
 
         .cancel
@@ -68,13 +70,39 @@
 
             &:hover
             {
-                background-color: darken(@primary-color, 25%);
+                background-color: darken(@primary-color, 20%);
             }
         }
 
         &.hide
         {
             display: none;
+        }
+
+        &.pending
+        {
+            .estimate::after
+            {
+                pointer-events: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                content: "Transmit";
+                background-color: darken(@primary-color, 20%);
+                color: @text-color;
+                text-align: center;
+                display: none;
+            }
+
+            .estimate:hover
+            {
+                &::after
+                {
+                    display: block;
+                }
+            }
         }
 
         &.open

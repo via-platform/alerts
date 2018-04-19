@@ -38,6 +38,10 @@
 
     .via-table
     {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
         .tr
         {
             display: flex;
@@ -54,6 +58,12 @@
                 white-space: nowrap;
                 text-overflow: ellipsis;
             }
+        }
+
+        .tbody
+        {
+            flex: 1;
+            overflow: auto;
         }
     }
 }
