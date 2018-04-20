@@ -60,6 +60,12 @@
       "type": "boolean",
       "default": false
     },
+    "showLinesForOpenAlerts": {
+      "title": "Show Horizontal Lines on the Chart for Open Alerts",
+      "description": "Show a horizontal line on the chart for alerts after they have been transmitted.",
+      "type": "boolean",
+      "default": false
+    },
     "defaultExpiration": {
       "title": "Default Alert Expiration",
       "description": "The default amount of time to wait until automatically expiring an alert.",
