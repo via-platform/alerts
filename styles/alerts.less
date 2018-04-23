@@ -65,6 +65,24 @@
             flex: 1;
             overflow: auto;
         }
+
+        .cancel, .transmit
+        {
+            display: block;
+            font-weight: 700;
+            color: @primary-color-down;
+            cursor: default;
+
+            &:hover
+            {
+                text-decoration: none;
+            }
+        }
+
+        .transmit
+        {
+            color: @primary-color;
+        }
     }
 }
 
