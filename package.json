@@ -13,7 +13,7 @@
   "repository": "https://github.com/via-platform/alerts",
   "author": "Dakota Gordon",
   "engines": {
-    "via": "^0.5.7-alpha"
+    "via": ">=0.8.0-alpha"
   },
   "dependencies": {
     "axios": "^0.17.0",
