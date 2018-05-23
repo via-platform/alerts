@@ -15,9 +15,9 @@
             text
             {
                 fill: #333;
-                font-size: 12px;
+                font-size: 11px;
                 font-weight: 700;
-                font-family: 'Inconsolata';
+                font-family: @font-family-serif;
             }
         }
     }
@@ -33,9 +33,9 @@
         z-index: 2;
         display: flex;
         align-items: center;
-        font-size: 12px;
+        font-size: 11px;
         font-weight: 700;
-        font-family: 'Inconsolata';
+        font-family: @font-family-serif;
         line-height: 19px;
         user-select: none;
         cursor: row-resize;
@@ -45,6 +45,7 @@
             background: @text-color;
             color: @primary-color;
             padding: 0 6px;
+            font-weight: 500;
         }
 
         .estimate
