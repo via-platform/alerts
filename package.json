@@ -20,7 +20,7 @@
     "moment": "^2.20.1",
     "etch": "0.9.0",
     "underscore-plus": "^1.0.0",
-    "via-table": "^0.2.3"
+    "via-table": "^0.2.4"
   },
   "deserializers": {
     "AlertManager": "deserializeAlertManager",
