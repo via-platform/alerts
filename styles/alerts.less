@@ -159,22 +159,14 @@
 
     .alert-transmit
     {
+        display: block;
         width: 100%;
-        font-weight: 700;
-        text-transform: uppercase;
-        height: 34px;
-        border-radius: 3px;
-        border: 0;
-        font-size: 11px;
-        font-family: @font-family;
-        background-color: @primary-color;
-        color: @text-color;
 
         &.invalid
         {
             pointer-events: none;
-            background: @header-border-color;
-            color: @pane-background-color;
+            background: @header-background-color;
+            color: @text-color-subtle;
         }
 
         &.transmitting
@@ -195,6 +187,7 @@
         height: 18px;
         line-height: 18px;
         transition: all ease 0.15s;
+        cursor: default;
 
         &:active
         {

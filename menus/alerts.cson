@@ -1,3 +1,16 @@
+'menu': [
+  {
+    'label': 'View'
+    'submenu': [
+      'label': 'Components'
+      'submenu': [
+        { 'label': 'Manage Alerts', 'command': 'alerts:open-manager' }
+        { 'label': 'Create Alert', 'command': 'alerts:open-creator' }
+      ]
+    ]
+  }
+]
+
 'context-menu':
   '.alerts .tr.open': [
     {label: 'Cancel Alert', command: 'alerts:cancel-alert'}
