@@ -20,6 +20,11 @@
     {label: 'Remove Alert', command: 'alerts:cancel-alert'}
     {label: 'View On Chart', command: 'alerts:open-chart'}
   ]
+  '.alerts': [
+    {type: 'separator'}
+    {label: 'Cancel All Alerts', command: 'alerts:cancel-all'}
+    {type: 'separator'}
+  ]
   '.chart .chart-alert-tools.open': [
     {label: 'Cancel Alert', command: 'alerts:cancel-alert'}
     {type: 'separator'}

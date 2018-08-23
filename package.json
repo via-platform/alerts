@@ -149,6 +149,11 @@
       "versions": {
         "^0.1.0": "consumeCharts"
       }
-    }
+  },
+      "status-bar": {
+        "versions": {
+          "^0.1.0": "consumeStatusBar"
+        }
+      }
   }
 }

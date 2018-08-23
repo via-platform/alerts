@@ -233,3 +233,28 @@
         }
     }
 }
+
+.alerts-status
+{
+    display: flex;
+    align-items: center;
+    background-size: 12px auto;
+    background-repeat: no-repeat;
+    font-weight: 700;
+    color: @primary-color;
+
+    .alerts-status-icon
+    {
+        display: block;
+        margin-right: 4px;
+        width: 16px;
+        height: 16px;
+        background: url('via://alerts/images/alert-blue.svg') 2px 2px no-repeat;
+        background-size: 12px auto;
+    }
+
+    &:hover
+    {
+        color: @primary-color;
+    }
+}
