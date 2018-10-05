@@ -1,6 +1,6 @@
 {
   "name": "alerts",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Connect to the Via alerts server to create, update, and handle alerts.",
   "main": "./lib/main",
   "scripts": {
